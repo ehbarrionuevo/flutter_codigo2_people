@@ -70,7 +70,7 @@ class HomePage extends StatelessWidget {
           //   Text("Hola xxxxxx"),
           //   Text("Hola xxxxx2"),
           // ],
-          // ...items,
+          //...items,
           // ...List.generate(people.length, (index) => Text(people[index])),
         ],
       ),
