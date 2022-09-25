@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 class TestPage extends StatelessWidget {
@@ -8,7 +7,9 @@ class TestPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Test",),
+        title: Text(
+          "Test",
+        ),
       ),
       body: Column(
         children: [
@@ -18,25 +19,229 @@ class TestPage extends StatelessWidget {
                 Expanded(
                   flex: 1,
                   child: Container(
+                    margin: const EdgeInsets.all(2),
+                    color: Colors.red,
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Expanded(
+            child: Row(
+              children: [
+                Expanded(
+                  flex: 1,
+                  child: Container(
+                    margin: const EdgeInsets.all(2),
                     color: Colors.red,
                   ),
                 ),
                 Expanded(
                   flex: 1,
                   child: Container(
-                    color: Colors.blue,
+                    margin: const EdgeInsets.all(2),
+                    color: Colors.red,
                   ),
                 ),
                 Expanded(
                   flex: 1,
                   child: Container(
-                    color: Colors.greenAccent,
+                    margin: const EdgeInsets.all(2),
+                    color: Colors.red,
                   ),
                 ),
                 Expanded(
                   flex: 1,
                   child: Container(
-                    color: Colors.amber,
+                    margin: const EdgeInsets.all(2),
+                    color: Colors.red,
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Expanded(
+            child: Row(
+              children: [
+                Expanded(
+                  flex: 1,
+                  child: Container(
+                    margin: const EdgeInsets.all(2),
+                    color: Colors.red,
+                  ),
+                ),
+                Expanded(
+                  flex: 1,
+                  child: Container(
+                    margin: const EdgeInsets.all(2),
+                    color: Colors.red,
+                  ),
+                ),
+                Expanded(
+                  flex: 1,
+                  child: Container(
+                    margin: const EdgeInsets.all(2),
+                    color: Colors.red,
+                  ),
+                ),
+                Expanded(
+                  flex: 1,
+                  child: Container(
+                    margin: const EdgeInsets.all(2),
+                    color: Colors.red,
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Expanded(
+            child: Row(
+              children: [
+                Expanded(
+                  flex: 1,
+                  child: Container(
+                    margin: const EdgeInsets.all(2),
+                    color: Colors.red,
+                  ),
+                ),
+                Expanded(
+                  flex: 1,
+                  child: Container(
+                    margin: const EdgeInsets.all(2),
+                    color: Colors.red,
+                  ),
+                ),
+                Expanded(
+                  flex: 1,
+                  child: Container(
+                    margin: const EdgeInsets.all(2),
+                    color: Colors.red,
+                  ),
+                ),
+                Expanded(
+                  flex: 1,
+                  child: Container(
+                    margin: const EdgeInsets.all(2),
+                    color: Colors.red,
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Expanded(
+            child: Row(
+              children: [
+                Expanded(
+                  flex: 1,
+                  child: Container(
+                    margin: const EdgeInsets.all(2),
+                    color: Colors.red,
+                  ),
+                ),
+                Expanded(
+                  flex: 1,
+                  child: Container(
+                    margin: const EdgeInsets.all(2),
+                    color: Colors.red,
+                  ),
+                ),
+                Expanded(
+                  flex: 1,
+                  child: Container(
+                    margin: const EdgeInsets.all(2),
+                    color: Colors.red,
+                  ),
+                ),
+                Expanded(
+                  flex: 1,
+                  child: Container(
+                    margin: const EdgeInsets.all(2),
+                    color: Colors.red,
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Expanded(
+            child: Row(
+              children: [
+                Expanded(
+                  flex: 1,
+                  child: Container(
+                    margin: const EdgeInsets.all(2),
+                    color: Colors.red,
+                  ),
+                ),
+                Expanded(
+                  flex: 1,
+                  child: Container(
+                    margin: const EdgeInsets.all(2),
+                    color: Colors.red,
+                  ),
+                ),
+                Expanded(
+                  flex: 1,
+                  child: Container(
+                    margin: const EdgeInsets.all(2),
+                    color: Colors.red,
+                  ),
+                ),
+                Expanded(
+                  flex: 1,
+                  child: Container(
+                    margin: const EdgeInsets.all(2),
+                    color: Colors.red,
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Expanded(
+            child: Row(
+              children: [
+                Expanded(
+                  flex: 1,
+                  child: GestureDetector(
+                    onTap: (){
+                      print(0);
+                    },
+                    child: Container(
+                      margin: const EdgeInsets.all(2),
+                      color: Colors.red,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            "0",
+                            style: TextStyle(
+                              fontSize: 30.0,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+                Expanded(
+                  flex: 1,
+                  child: Container(
+                    margin: const EdgeInsets.all(2),
+                    color: Colors.red,
+                  ),
+                ),
+                Expanded(
+                  flex: 1,
+                  child: Container(
+                    margin: const EdgeInsets.all(2),
+                    color: Colors.red,
+                  ),
+                ),
+                Expanded(
+                  flex: 1,
+                  child: Container(
+                    margin: const EdgeInsets.all(2),
+                    color: Colors.red,
                   ),
                 ),
               ],
