@@ -12,10 +12,10 @@ class HomePage extends StatelessWidget {
   ];
 
   List<Person> people2 = [
-    Person(name: "Elvis Barrionuevo", address: "Av. Lima 123", img: ""),
-    Person(name: "Juan Lopez", address: "Av. Contreras 123", img: ""),
-    Person(name: "Carlos Montes", address: "Av. Tacna 23123", img: ""),
-    Person(name: "Fiorella Marquez", address: "Av. Cayma", img: ""),
+    Person(name: "Elvis Barrionuevo", address: "Av. Lima 123", img: "https://images.pexels.com/photos/1681010/pexels-photo-1681010.jpeg?auto=compress&cs=tinysrgb&w=1600"),
+    Person(name: "Juan Lopez", address: "Av. Contreras 123", img: "https://images.pexels.com/photos/1212984/pexels-photo-1212984.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"),
+    Person(name: "Carlos Montes", address: "Av. Tacna 23123", img: "https://images.pexels.com/photos/1861594/pexels-photo-1861594.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"),
+    Person(name: "Fiorella Marquez", address: "Av. Cayma", img: "https://images.pexels.com/photos/1480356/pexels-photo-1480356.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"),
   ];
 
 
