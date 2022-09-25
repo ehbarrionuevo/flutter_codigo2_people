@@ -2,17 +2,25 @@
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
+
+  List<String> people = [
+    "Juan Carlos",
+    "Luis Gustavo",
+    "Elvis Barrionuevo",
+    "Dario Manuel",
+  ];
+
+  List<Widget> items = List.generate(10, (index) => Text("Hola"));
 
   @override
   Widget build(BuildContext context) {
+    // print(List.generate(5, (index) => 23.22));
     return Scaffold(
       appBar: AppBar(
         title: Text("People"),
       ),
       body: Column(
         children:[
-
           Card(
             margin: EdgeInsets.symmetric(horizontal: 10.0, vertical: 6.0),
             color: Colors.white,
@@ -28,7 +36,13 @@ class HomePage extends StatelessWidget {
               subtitle: Text("Jr. Gonzales Lopez 12323"),
             ),
           ),
-
+          ...List.generate(10, (index) => Text("Hola")),
+          ...[
+            Text("Hola xxxxxx"),
+            Text("Hola xxxxx2"),
+          ],
+          ...items,
+          ...people,
         ],
       ),
     );
