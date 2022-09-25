@@ -10,6 +10,7 @@ class HomePage extends StatelessWidget {
     "Dario Manuel",
   ];
 
+
   List<Widget> items = List.generate(10, (index) => Text("Hola"));
 
   @override
@@ -42,7 +43,7 @@ class HomePage extends StatelessWidget {
             Text("Hola xxxxx2"),
           ],
           ...items,
-          ...people,
+          ...List.generate(people.length, (index) => Text(people[index])),
         ],
       ),
     );
