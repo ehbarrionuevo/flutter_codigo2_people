@@ -1,4 +1,5 @@
 
+import 'package:codigo2_people/person.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -9,6 +10,14 @@ class HomePage extends StatelessWidget {
     "Elvis Barrionuevo",
     "Dario Manuel",
   ];
+
+  List<Person> people2 = [
+    Person(name: "Elvis Barrionuevo", address: "Av. Lima 123", img: ""),
+    Person(name: "Juan Lopez", address: "Av. Contreras 123", img: ""),
+    Person(name: "Carlos Montes", address: "Av. Tacna 23123", img: ""),
+    Person(name: "Fiorella Marquez", address: "Av. Cayma", img: ""),
+  ];
+
 
 
   List<Widget> items = List.generate(10, (index) => Text("Hola"));
