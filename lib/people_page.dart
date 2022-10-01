@@ -31,6 +31,10 @@ class _PeoplePageState extends State<PeoplePage> {
     UserModel(id: 2, name: "Elvis Barrionuevo", phone: "6565656"),
   ];
 
+  String fullName = "";
+  String phone = "";
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -70,7 +74,7 @@ class _PeoplePageState extends State<PeoplePage> {
                 hintText: "Nombre completo",
               ),
               onChanged: (String value){
-                print(value);
+                fullName = value;
               },
             ),
             const SizedBox(
@@ -81,7 +85,7 @@ class _PeoplePageState extends State<PeoplePage> {
                 hintText: "Teléfono",
               ),
               onChanged: (String value){
-                print(value);
+                phone = value;
               },
             ),
             const SizedBox(
@@ -93,9 +97,9 @@ class _PeoplePageState extends State<PeoplePage> {
               child: ElevatedButton(
                 onPressed: () {
                   UserModel user = UserModel(
-                    id: 5,
-                    name: "Daniel Lopez",
-                    phone: "123123123",
+                    id: people2.length + 1,
+                    name: fullName,
+                    phone: phone,
                   );
 
                   people2.add(user);
@@ -104,7 +108,7 @@ class _PeoplePageState extends State<PeoplePage> {
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.indigo,
                 ),
-                child: Text(
+                child: const Text(
                   "Agregar",
                 ),
               ),
