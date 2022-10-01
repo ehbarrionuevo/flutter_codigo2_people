@@ -27,12 +27,7 @@ class _PeoplePageState extends State<PeoplePage> {
   ];
 
   List<UserModel> people2 = [
-    UserModel(
-      id: 1,
-      name: "Daniel Lopez",
-      phone: "232323",
-      role: "Admin"
-    ),
+    UserModel(id: 1, name: "Daniel Lopez", phone: "232323", role: "Admin"),
     UserModel(
       id: 2,
       name: "Elvis Barrionuevo",
@@ -43,7 +38,7 @@ class _PeoplePageState extends State<PeoplePage> {
 
   String fullName = "";
   String phone = "";
-  String role = "";
+  String role = "Admin";
 
   @override
   Widget build(BuildContext context) {
@@ -51,13 +46,12 @@ class _PeoplePageState extends State<PeoplePage> {
       appBar: AppBar(
         backgroundColor: Colors.indigo,
         title: Text("People Page (${people2.length})"),
-        actions: [
-
-        ],
+        actions: [],
       ),
       body: SingleChildScrollView(
         padding: EdgeInsets.all(14.0),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
               "Registrar persona",
@@ -87,16 +81,38 @@ class _PeoplePageState extends State<PeoplePage> {
               },
             ),
             const SizedBox(
+              height: 20.0,
+            ),
+            const Text("Rol:"),
+            const SizedBox(
               height: 10.0,
             ),
-            TextField(
-              decoration: const InputDecoration(
-                hintText: "Rol",
-              ),
-              onChanged: (String value) {
-                role = value;
+            RadioListTile(
+              title: Text("Admin"),
+              value: "Admin",
+              groupValue: role,
+              onChanged: (String? value){
+                role = value!;
+                setState(() {
+
+                });
               },
             ),
+            RadioListTile(
+              title: Text("User"),
+              value: "User",
+              groupValue: role,
+              onChanged: (String? value){
+                role = value!;
+                setState(() {
+
+                });
+              },
+            ),
+
+
+
+
             const SizedBox(
               height: 20,
             ),
