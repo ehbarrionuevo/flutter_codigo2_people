@@ -27,7 +27,12 @@ class _PeoplePageState extends State<PeoplePage> {
   ];
 
   List<UserModel> people2 = [
-    UserModel(id: 1, name: "Daniel Lopez", phone: "232323", role: "Admin"),
+    UserModel(
+      id: 1,
+      name: "Daniel Lopez",
+      phone: "232323",
+      role: "Admin",
+    ),
     UserModel(
       id: 2,
       name: "Elvis Barrionuevo",
@@ -91,28 +96,20 @@ class _PeoplePageState extends State<PeoplePage> {
               title: Text("Admin"),
               value: "Admin",
               groupValue: role,
-              onChanged: (String? value){
+              onChanged: (String? value) {
                 role = value!;
-                setState(() {
-
-                });
+                setState(() {});
               },
             ),
             RadioListTile(
               title: Text("User"),
               value: "User",
               groupValue: role,
-              onChanged: (String? value){
+              onChanged: (String? value) {
                 role = value!;
-                setState(() {
-
-                });
+                setState(() {});
               },
             ),
-
-
-
-
             const SizedBox(
               height: 20,
             ),
@@ -157,8 +154,37 @@ class _PeoplePageState extends State<PeoplePage> {
             const SizedBox(
               height: 12.0,
             ),
-            ...List.generate(people2.length,
-                (index) => ItemPersonWidget(data: people2[index])),
+            people2.isNotEmpty
+                ? Column(
+                    children: List.generate(
+                      people2.length,
+                      (index) => ItemPersonWidget(
+                        data: people2[index],
+                        miFuncion: () {
+                          people2.removeAt(index);
+                          setState(() {});
+                        },
+                      ),
+                    ),
+                  )
+                : Center(
+                  child: Column(
+                      children: [
+                        const SizedBox(
+                          height: 20.0,
+                        ),
+                        Image.asset(
+                          'assets/images/box.png',
+                          height: 120.0,
+                          color: Colors.black.withOpacity(0.75),
+                        ),
+                        const SizedBox(
+                          height: 6.0,
+                        ),
+                        const Text("No hay registros"),
+                      ],
+                    ),
+                ),
           ],
           // children:
           //     people2.map<Widget>((e) => ItemPersonWidget(data: e)).toList(),

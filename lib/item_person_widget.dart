@@ -6,8 +6,11 @@ import 'package:flutter/material.dart';
 class ItemPersonWidget extends StatelessWidget {
 
   UserModel data;
+  Function miFuncion;
+
   ItemPersonWidget({
     required this.data,
+    required this.miFuncion,
   });
 
   final List<Color> _colors = [
@@ -22,7 +25,6 @@ class ItemPersonWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     int index = Random().nextInt(_colors.length);
 
     return Card(
@@ -45,6 +47,15 @@ class ItemPersonWidget extends StatelessWidget {
           data.name,
         ),
         subtitle: Text("Teléfono: ${data.phone} - Rol: ${data.role}"),
+        trailing: IconButton(
+          onPressed: () {
+            miFuncion();
+          },
+          icon: Icon(
+            Icons.delete,
+            color: Colors.redAccent,
+          ),
+        ),
       ),
     );
   }
