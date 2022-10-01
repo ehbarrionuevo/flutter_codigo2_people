@@ -45,6 +45,9 @@ class _PeoplePageState extends State<PeoplePage> {
   String phone = "";
   String role = "Admin";
 
+  String filterText = "Todos";
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -161,27 +164,34 @@ class _PeoplePageState extends State<PeoplePage> {
                   margin: const EdgeInsets.only(right: 12.0),
                   child: InkWell(
                     onTap: (){
+                      filterText = "Todos";
+                      setState(() {
 
+                      });
                     },
                     child: Text(
                       "Todos",
                       style: TextStyle(
-                        color: Colors.black.withOpacity(0.5),
+                        color: filterText == "Todos" ? Colors.black : Colors.black.withOpacity(0.5),
+                        fontWeight: filterText == "Todos" ? FontWeight.bold : FontWeight.normal,
                       ),
                     ),
                   ),
                 ),
-
                 Container(
                   margin: const EdgeInsets.only(right: 12.0),
                   child: InkWell(
                     onTap: (){
+                      filterText = "Admin";
+                      setState(() {
 
+                      });
                     },
                     child: Text(
                       "Admin",
                       style: TextStyle(
-                        color: Colors.black.withOpacity(0.5),
+                        color: filterText == "Admin" ? Colors.black : Colors.black.withOpacity(0.5),
+                        fontWeight: filterText == "Admin" ? FontWeight.bold : FontWeight.normal,
                       ),
                     ),
                   ),
@@ -190,12 +200,16 @@ class _PeoplePageState extends State<PeoplePage> {
                   margin: const EdgeInsets.only(right: 12.0),
                   child: InkWell(
                     onTap: (){
+                      filterText = "User";
+                      setState(() {
 
+                      });
                     },
                     child: Text(
                       "User",
                       style: TextStyle(
-                        color: Colors.black.withOpacity(0.5),
+                        color: filterText == "User" ? Colors.black : Colors.black.withOpacity(0.5),
+                        fontWeight: filterText == "User" ? FontWeight.bold : FontWeight.normal,
                       ),
                     ),
                   ),
