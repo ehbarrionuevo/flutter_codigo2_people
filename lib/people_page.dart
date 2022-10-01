@@ -57,13 +57,17 @@ class _PeoplePageState extends State<PeoplePage> {
           IconButton(
             onPressed: () {
 
-              Map<String, dynamic> myMap = {
-                "id": 4,
-                "name": "Fernanda Lopez",
-                "phone": "656565656",
-              };
+              // Map<String, dynamic> myMap = {
+              //   "id": 4,
+              //   "name": "Fernanda Lopez",
+              //   "phone": "656565656",
+              // };
+              //
+              // people.add(myMap);
 
-              people.add(myMap);
+              UserModel person = UserModel(id: 3, name: "Catalina Montes", phone: "354545");
+
+              people2.add(person);
 
               setState((){});
 
@@ -74,23 +78,11 @@ class _PeoplePageState extends State<PeoplePage> {
           ),
         ],
       ),
-      body: Column(
-        children: [
-          Text(
-            "Lista de personas",
-          ),
-
-          ...List.generate(
-            people2.length,
-            (index) => ItemPersonWidget(data: people2[index]),
-          ),
-
-          // ...people
-          //     .map(
-          //       (item) => ItemPersonWidget(data: item,),
-          //     )
-          //     .toList(),
-        ],
+      body: SingleChildScrollView(
+        child: Column(
+          //children: List.generate(people2.length, (index) => ItemPersonWidget(data: people2[index])),
+          children: people2.map<Widget>((e) => ItemPersonWidget(data: e)).toList(),
+        ),
       ),
     );
   }
