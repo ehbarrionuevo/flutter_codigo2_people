@@ -1,8 +1,6 @@
-
 import 'package:flutter/material.dart';
 
 class PeoplePage extends StatelessWidget {
-
   List<Map<String, dynamic>> people = [
     {
       "id": 1,
@@ -21,6 +19,21 @@ class PeoplePage extends StatelessWidget {
     },
   ];
 
+  Widget itemPersonWidget(){
+    return Card(
+      color: Colors.white,
+      margin: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 6.0),
+      elevation: 5,
+      shadowColor: Colors.black.withOpacity(0.2),
+      child: ListTile(
+        title: Text("Juan Carlos",),
+        subtitle: Text("Teléfono: 34324324334"),
+      ),
+    );
+  }
+
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,9 +43,22 @@ class PeoplePage extends StatelessWidget {
       ),
       body: Column(
         children: [
-          Text("Lista de personas" ,),
-          ...List.generate(people.length, (index) => Text(people[index]["name"],),),
-          ...people.map((item) => Text(item["name"])).toList(),
+          Text(
+            "Lista de personas",
+          ),
+
+          ...List.generate(
+            people.length,
+            (index) => itemPersonWidget(),
+          ),
+
+          Divider(),
+
+          ...people
+              .map(
+                (item) => itemPersonWidget(),
+              )
+              .toList(),
         ],
       ),
     );
