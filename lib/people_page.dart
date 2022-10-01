@@ -19,15 +19,15 @@ class PeoplePage extends StatelessWidget {
     },
   ];
 
-  Widget itemPersonWidget({String name = "-", String phone = "-"}){
+  Widget itemPersonWidget(Map<String, dynamic> data){
     return Card(
       color: Colors.white,
       margin: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 6.0),
       elevation: 5,
       shadowColor: Colors.black.withOpacity(0.2),
       child: ListTile(
-        title: Text(name,),
-        subtitle: Text("Teléfono: $phone"),
+        title: Text(data["name"],),
+        subtitle: Text("Teléfono: ${data["phone"]}"),
       ),
     );
   }
@@ -49,14 +49,14 @@ class PeoplePage extends StatelessWidget {
 
           ...List.generate(
             people.length,
-            (index) => itemPersonWidget(name: people[index]["name"], phone: people[index]["phone"] ),
+            (index) => itemPersonWidget(people[index]),
           ),
 
           Divider(),
 
           ...people
               .map(
-                (item) => itemPersonWidget(name: item["name"], phone: item["phone"] ),
+                (item) => itemPersonWidget(item),
               )
               .toList(),
         ],
