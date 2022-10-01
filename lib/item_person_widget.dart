@@ -25,10 +25,9 @@ class ItemPersonWidget extends StatelessWidget {
 
     int index = Random().nextInt(_colors.length);
 
-
     return Card(
       color: Colors.white,
-      margin: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 6.0),
+      margin: const EdgeInsets.symmetric(horizontal: 0.0, vertical: 6.0),
       elevation: 5,
       shadowColor: Colors.black.withOpacity(0.2),
       child: ListTile(

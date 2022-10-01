@@ -54,10 +54,35 @@ class _PeoplePageState extends State<PeoplePage> {
         ],
       ),
       body: SingleChildScrollView(
+        padding: EdgeInsets.all(14.0),
         child: Column(
-          //children: List.generate(people2.length, (index) => ItemPersonWidget(data: people2[index])),
-          children:
-              people2.map<Widget>((e) => ItemPersonWidget(data: e)).toList(),
+          children: [
+            Text("Registrar persona"),
+            TextField(
+              decoration: InputDecoration(
+                hintText: "Nombre completo"
+              ),
+            ),
+            SizedBox(
+              height: 10.0,
+            ),
+            TextField(
+              decoration: InputDecoration(
+                  hintText: "Teléfono"
+              ),
+            ),
+            SizedBox(
+              height: 12.0,
+            ),
+            Divider(),
+            Text("Listado de personas"),
+            SizedBox(
+              height: 12.0,
+            ),
+            ...List.generate(people2.length, (index) => ItemPersonWidget(data: people2[index])),
+          ],
+          // children:
+          //     people2.map<Widget>((e) => ItemPersonWidget(data: e)).toList(),
         ),
       ),
     );
