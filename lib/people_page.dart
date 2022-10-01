@@ -47,6 +47,42 @@ class _PeoplePageState extends State<PeoplePage> {
 
   String filterText = "Todos";
 
+  List<UserModel> people2Aux = [];
+
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    people2Aux = people2;
+  }
+
+
+  void filterData(){
+
+    //filterText = Admin
+
+    // List<UserModel> aux = [];
+    // people2.forEach((element) {
+    //   if(element.role == filterText){
+    //     aux.add(element);
+    //   }
+    // });
+    // people2.clear();
+    // people2 = aux;
+
+    people2 = people2Aux;
+
+    if(filterText != "Todos"){
+      people2 = people2.where((element) => element.role == filterText).toList();
+    }
+
+    setState(() {
+
+    });
+  }
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -165,6 +201,7 @@ class _PeoplePageState extends State<PeoplePage> {
                   child: InkWell(
                     onTap: (){
                       filterText = "Todos";
+                      filterData();
                       setState(() {
 
                       });
@@ -183,6 +220,7 @@ class _PeoplePageState extends State<PeoplePage> {
                   child: InkWell(
                     onTap: (){
                       filterText = "Admin";
+                      filterData();
                       setState(() {
 
                       });
@@ -201,6 +239,7 @@ class _PeoplePageState extends State<PeoplePage> {
                   child: InkWell(
                     onTap: (){
                       filterText = "User";
+                      filterData();
                       setState(() {
 
                       });
@@ -260,3 +299,4 @@ class _PeoplePageState extends State<PeoplePage> {
     );
   }
 }
+
