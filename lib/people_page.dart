@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 
-class PeoplePage extends StatelessWidget {
+class PeoplePage extends StatefulWidget {
+  @override
+  State<PeoplePage> createState() => _PeoplePageState();
+}
+
+class _PeoplePageState extends State<PeoplePage> {
   List<Map<String, dynamic>> people = [
     {
       "id": 1,
@@ -42,7 +47,19 @@ class PeoplePage extends StatelessWidget {
         title: Text("People Page"),
         actions: [
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+
+              Map<String, dynamic> myMap = {
+                "id": 4,
+                "name": "Fernanda Lopez",
+                "phone": "656565656",
+              };
+
+              people.add(myMap);
+
+              setState((){});
+
+            },
             icon: Icon(
               Icons.add,
             ),
