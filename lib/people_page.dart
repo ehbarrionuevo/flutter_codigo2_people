@@ -1,3 +1,4 @@
+import 'package:codigo2_people/user_model.dart';
 import 'package:flutter/material.dart';
 
 class PeoplePage extends StatefulWidget {
@@ -23,6 +24,13 @@ class _PeoplePageState extends State<PeoplePage> {
       "phone": "123222444",
     },
   ];
+
+  List<UserModel> people2 = [
+    UserModel(id: 1, name: "Daniel Lopez", phone: "232323"),
+    UserModel(id: 2, name: "Elvis Barrionuevo", phone: "6565656"),
+  ];
+
+
 
   Widget itemPersonWidget(Map<String, dynamic> data) {
     return Card(
@@ -73,8 +81,8 @@ class _PeoplePageState extends State<PeoplePage> {
           ),
 
           ...List.generate(
-            people.length,
-            (index) => ItemPersonWidget(data: people[index]),
+            people2.length,
+            (index) => ItemPersonWidget(data: people2[index]),
           ),
 
           // ...people
@@ -89,7 +97,8 @@ class _PeoplePageState extends State<PeoplePage> {
 }
 
 class ItemPersonWidget extends StatelessWidget {
-  Map<String, dynamic> data;
+  // Map<String, dynamic> data;
+  UserModel data;
 
   ItemPersonWidget({
     required this.data,
@@ -104,9 +113,9 @@ class ItemPersonWidget extends StatelessWidget {
       shadowColor: Colors.black.withOpacity(0.2),
       child: ListTile(
         title: Text(
-          data["name"],
+          data.name,
         ),
-        subtitle: Text("Teléfono: ${data["phone"]}"),
+        subtitle: Text("Teléfono: ${data.phone}"),
       ),
     );
   }
