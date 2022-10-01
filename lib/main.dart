@@ -1,4 +1,5 @@
 import 'package:codigo2_people/home_page.dart';
+import 'package:codigo2_people/people_page.dart';
 import 'package:codigo2_people/test_page.dart';
 import 'package:flutter/material.dart';
 
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: "PeopleApp",
       debugShowCheckedModeBanner: false,
-      home: TestPage(),
+      home: PeoplePage(),
     );
   }
 }
