@@ -1,3 +1,4 @@
+import 'package:codigo2_people/item_person_widget.dart';
 import 'package:codigo2_people/user_model.dart';
 import 'package:flutter/material.dart';
 
@@ -30,21 +31,6 @@ class _PeoplePageState extends State<PeoplePage> {
     UserModel(id: 2, name: "Elvis Barrionuevo", phone: "6565656"),
   ];
 
-  Widget itemPersonWidget(Map<String, dynamic> data) {
-    return Card(
-      color: Colors.white,
-      margin: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 6.0),
-      elevation: 5,
-      shadowColor: Colors.black.withOpacity(0.2),
-      child: ListTile(
-        title: Text(
-          data["name"],
-        ),
-        subtitle: Text("Teléfono: ${data["phone"]}"),
-      ),
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -54,14 +40,6 @@ class _PeoplePageState extends State<PeoplePage> {
         actions: [
           IconButton(
             onPressed: () {
-              // Map<String, dynamic> myMap = {
-              //   "id": 4,
-              //   "name": "Fernanda Lopez",
-              //   "phone": "656565656",
-              // };
-              //
-              // people.add(myMap);
-
               UserModel person =
                   UserModel(id: 3, name: "Catalina Montes", phone: "354545");
 
@@ -69,7 +47,7 @@ class _PeoplePageState extends State<PeoplePage> {
 
               setState(() {});
             },
-            icon: Icon(
+            icon: const Icon(
               Icons.add,
             ),
           ),
@@ -86,37 +64,6 @@ class _PeoplePageState extends State<PeoplePage> {
   }
 }
 
-class ItemPersonWidget extends StatelessWidget {
-  // Map<String, dynamic> data;
-  UserModel data;
 
-  ItemPersonWidget({
-    required this.data,
-  });
 
-  @override
-  Widget build(BuildContext context) {
-    return Card(
-      color: Colors.white,
-      margin: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 6.0),
-      elevation: 5,
-      shadowColor: Colors.black.withOpacity(0.2),
-      child: ListTile(
-        leading: CircleAvatar(
-          backgroundColor: Colors.indigo,
-          child: Text(
-            data.name[0],
-            style: TextStyle(
-              color: Colors.white,
-              fontWeight: FontWeight.normal,
-            ),
-          ),
-        ),
-        title: Text(
-          data.name,
-        ),
-        subtitle: Text("Teléfono: ${data.phone}"),
-      ),
-    );
-  }
-}
+
