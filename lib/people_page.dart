@@ -57,29 +57,78 @@ class _PeoplePageState extends State<PeoplePage> {
         padding: EdgeInsets.all(14.0),
         child: Column(
           children: [
-            Text("Registrar persona"),
-            TextField(
-              decoration: InputDecoration(
-                hintText: "Nombre completo"
+            Text(
+              "Registrar persona",
+              style: TextStyle(
+                fontSize: 16.0,
+                fontWeight: FontWeight.bold,
+                color: Colors.black.withOpacity(0.75),
               ),
             ),
-            SizedBox(
+            TextField(
+              decoration: const InputDecoration(
+                hintText: "Nombre completo",
+              ),
+              onChanged: (String value){
+                print(value);
+              },
+            ),
+            const SizedBox(
               height: 10.0,
             ),
             TextField(
-              decoration: InputDecoration(
-                  hintText: "Teléfono"
+              decoration: const InputDecoration(
+                hintText: "Teléfono",
+              ),
+              onChanged: (String value){
+                print(value);
+              },
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            SizedBox(
+              width: double.infinity,
+              height: 48,
+              child: ElevatedButton(
+                onPressed: () {
+                  UserModel user = UserModel(
+                    id: 5,
+                    name: "Daniel Lopez",
+                    phone: "123123123",
+                  );
+
+                  people2.add(user);
+                  setState(() {});
+                },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.indigo,
+                ),
+                child: Text(
+                  "Agregar",
+                ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
+              height: 10.0,
+            ),
+            const Divider(),
+            const SizedBox(
+              height: 10.0,
+            ),
+            Text(
+              "Listado de personas",
+              style: TextStyle(
+                fontSize: 16.0,
+                fontWeight: FontWeight.bold,
+                color: Colors.black.withOpacity(0.75),
+              ),
+            ),
+            const SizedBox(
               height: 12.0,
             ),
-            Divider(),
-            Text("Listado de personas"),
-            SizedBox(
-              height: 12.0,
-            ),
-            ...List.generate(people2.length, (index) => ItemPersonWidget(data: people2[index])),
+            ...List.generate(people2.length,
+                (index) => ItemPersonWidget(data: people2[index])),
           ],
           // children:
           //     people2.map<Widget>((e) => ItemPersonWidget(data: e)).toList(),
@@ -88,7 +137,3 @@ class _PeoplePageState extends State<PeoplePage> {
     );
   }
 }
-
-
-
-
