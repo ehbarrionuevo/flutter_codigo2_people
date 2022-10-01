@@ -19,20 +19,20 @@ class PeoplePage extends StatelessWidget {
     },
   ];
 
-  Widget itemPersonWidget(Map<String, dynamic> data){
+  Widget itemPersonWidget(Map<String, dynamic> data) {
     return Card(
       color: Colors.white,
       margin: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 6.0),
       elevation: 5,
       shadowColor: Colors.black.withOpacity(0.2),
       child: ListTile(
-        title: Text(data["name"],),
+        title: Text(
+          data["name"],
+        ),
         subtitle: Text("Teléfono: ${data["phone"]}"),
       ),
     );
   }
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -40,6 +40,14 @@ class PeoplePage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.indigo,
         title: Text("People Page"),
+        actions: [
+          IconButton(
+            onPressed: () {},
+            icon: Icon(
+              Icons.add,
+            ),
+          ),
+        ],
       ),
       body: Column(
         children: [
@@ -52,26 +60,23 @@ class PeoplePage extends StatelessWidget {
             (index) => ItemPersonWidget(data: people[index]),
           ),
 
-          Divider(),
-
-          ...people
-              .map(
-                (item) => ItemPersonWidget(data: item,),
-              )
-              .toList(),
+          // ...people
+          //     .map(
+          //       (item) => ItemPersonWidget(data: item,),
+          //     )
+          //     .toList(),
         ],
       ),
     );
   }
 }
 
-
-
 class ItemPersonWidget extends StatelessWidget {
-
   Map<String, dynamic> data;
 
-  ItemPersonWidget({required this.data,});
+  ItemPersonWidget({
+    required this.data,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -81,15 +86,11 @@ class ItemPersonWidget extends StatelessWidget {
       elevation: 5,
       shadowColor: Colors.black.withOpacity(0.2),
       child: ListTile(
-        title: Text(data["name"],),
+        title: Text(
+          data["name"],
+        ),
         subtitle: Text("Teléfono: ${data["phone"]}"),
       ),
     );
   }
 }
-
-
-
-
-
-
