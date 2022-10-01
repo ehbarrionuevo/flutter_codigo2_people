@@ -49,14 +49,14 @@ class PeoplePage extends StatelessWidget {
 
           ...List.generate(
             people.length,
-            (index) => itemPersonWidget(people[index]),
+            (index) => ItemPersonWidget(data: people[index]),
           ),
 
           Divider(),
 
           ...people
               .map(
-                (item) => itemPersonWidget(item),
+                (item) => ItemPersonWidget(data: item,),
               )
               .toList(),
         ],
@@ -64,3 +64,32 @@ class PeoplePage extends StatelessWidget {
     );
   }
 }
+
+
+
+class ItemPersonWidget extends StatelessWidget {
+
+  Map<String, dynamic> data;
+
+  ItemPersonWidget({required this.data,});
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      color: Colors.white,
+      margin: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 6.0),
+      elevation: 5,
+      shadowColor: Colors.black.withOpacity(0.2),
+      child: ListTile(
+        title: Text(data["name"],),
+        subtitle: Text("Teléfono: ${data["phone"]}"),
+      ),
+    );
+  }
+}
+
+
+
+
+
+
