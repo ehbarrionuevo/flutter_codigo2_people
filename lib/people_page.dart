@@ -30,7 +30,7 @@ class PeoplePage extends StatelessWidget {
       ),
       body: Column(
         children: [
-          Text("Lista de personas",),
+          Text("Lista de personas" ,),
           ...List.generate(people.length, (index) => Text(people[index]["name"],),),
           ...people.map((item) => Text(item["name"])).toList(),
         ],
