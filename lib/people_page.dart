@@ -19,7 +19,7 @@ class PeoplePage extends StatelessWidget {
     },
   ];
 
-  Widget itemPersonWidget({required String name, required String phone}){
+  Widget itemPersonWidget({String name = "-", String phone = "-"}){
     return Card(
       color: Colors.white,
       margin: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 6.0),
@@ -49,7 +49,7 @@ class PeoplePage extends StatelessWidget {
 
           ...List.generate(
             people.length,
-            (index) => itemPersonWidget(name: people[index]["name"] , phone: people[index]["phone"] ),
+            (index) => itemPersonWidget(name: people[index]["name"], phone: people[index]["phone"] ),
           ),
 
           Divider(),
