@@ -30,8 +30,6 @@ class _PeoplePageState extends State<PeoplePage> {
     UserModel(id: 2, name: "Elvis Barrionuevo", phone: "6565656"),
   ];
 
-
-
   Widget itemPersonWidget(Map<String, dynamic> data) {
     return Card(
       color: Colors.white,
@@ -52,11 +50,10 @@ class _PeoplePageState extends State<PeoplePage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.indigo,
-        title: Text("People Page"),
+        title: Text("People Page (${people2.length})"),
         actions: [
           IconButton(
             onPressed: () {
-
               // Map<String, dynamic> myMap = {
               //   "id": 4,
               //   "name": "Fernanda Lopez",
@@ -65,12 +62,12 @@ class _PeoplePageState extends State<PeoplePage> {
               //
               // people.add(myMap);
 
-              UserModel person = UserModel(id: 3, name: "Catalina Montes", phone: "354545");
+              UserModel person =
+                  UserModel(id: 3, name: "Catalina Montes", phone: "354545");
 
               people2.add(person);
 
-              setState((){});
-
+              setState(() {});
             },
             icon: Icon(
               Icons.add,
@@ -81,7 +78,8 @@ class _PeoplePageState extends State<PeoplePage> {
       body: SingleChildScrollView(
         child: Column(
           //children: List.generate(people2.length, (index) => ItemPersonWidget(data: people2[index])),
-          children: people2.map<Widget>((e) => ItemPersonWidget(data: e)).toList(),
+          children:
+              people2.map<Widget>((e) => ItemPersonWidget(data: e)).toList(),
         ),
       ),
     );
@@ -104,6 +102,16 @@ class ItemPersonWidget extends StatelessWidget {
       elevation: 5,
       shadowColor: Colors.black.withOpacity(0.2),
       child: ListTile(
+        leading: CircleAvatar(
+          backgroundColor: Colors.indigo,
+          child: Text(
+            data.name[0],
+            style: TextStyle(
+              color: Colors.white,
+              fontWeight: FontWeight.normal,
+            ),
+          ),
+        ),
         title: Text(
           data.name,
         ),
