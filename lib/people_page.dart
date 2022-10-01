@@ -19,7 +19,7 @@ class PeoplePage extends StatelessWidget {
     },
   ];
 
-  Widget itemPersonWidget(String name, String phone){
+  Widget itemPersonWidget({required String name, required String phone}){
     return Card(
       color: Colors.white,
       margin: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 6.0),
@@ -49,14 +49,14 @@ class PeoplePage extends StatelessWidget {
 
           ...List.generate(
             people.length,
-            (index) => itemPersonWidget(people[index]["name"], people[index]["phone"]),
+            (index) => itemPersonWidget(name: people[index]["name"] , phone: people[index]["phone"] ),
           ),
 
           Divider(),
 
           ...people
               .map(
-                (item) => itemPersonWidget(item["name"], item["phone"]),
+                (item) => itemPersonWidget(name: item["name"], phone: item["phone"] ),
               )
               .toList(),
         ],
