@@ -154,6 +154,59 @@ class _PeoplePageState extends State<PeoplePage> {
             const SizedBox(
               height: 12.0,
             ),
+
+            Row(
+              children: [
+                Container(
+                  margin: const EdgeInsets.only(right: 12.0),
+                  child: InkWell(
+                    onTap: (){
+
+                    },
+                    child: Text(
+                      "Todos",
+                      style: TextStyle(
+                        color: Colors.black.withOpacity(0.5),
+                      ),
+                    ),
+                  ),
+                ),
+
+                Container(
+                  margin: const EdgeInsets.only(right: 12.0),
+                  child: InkWell(
+                    onTap: (){
+
+                    },
+                    child: Text(
+                      "Admin",
+                      style: TextStyle(
+                        color: Colors.black.withOpacity(0.5),
+                      ),
+                    ),
+                  ),
+                ),
+                Container(
+                  margin: const EdgeInsets.only(right: 12.0),
+                  child: InkWell(
+                    onTap: (){
+
+                    },
+                    child: Text(
+                      "User",
+                      style: TextStyle(
+                        color: Colors.black.withOpacity(0.5),
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+
+            const SizedBox(
+              height: 12.0,
+            ),
+
             people2.isNotEmpty
                 ? Column(
                     children: List.generate(
@@ -168,7 +221,7 @@ class _PeoplePageState extends State<PeoplePage> {
                     ),
                   )
                 : Center(
-                  child: Column(
+                    child: Column(
                       children: [
                         const SizedBox(
                           height: 20.0,
@@ -184,7 +237,7 @@ class _PeoplePageState extends State<PeoplePage> {
                         const Text("No hay registros"),
                       ],
                     ),
-                ),
+                  ),
           ],
           // children:
           //     people2.map<Widget>((e) => ItemPersonWidget(data: e)).toList(),
