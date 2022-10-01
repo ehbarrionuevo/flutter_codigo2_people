@@ -44,7 +44,7 @@ class ItemPersonWidget extends StatelessWidget {
         title: Text(
           data.name,
         ),
-        subtitle: Text("Teléfono: ${data.phone}"),
+        subtitle: Text("Teléfono: ${data.phone} - Rol: ${data.role}"),
       ),
     );
   }

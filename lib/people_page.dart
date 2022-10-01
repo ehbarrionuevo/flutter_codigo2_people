@@ -27,13 +27,23 @@ class _PeoplePageState extends State<PeoplePage> {
   ];
 
   List<UserModel> people2 = [
-    UserModel(id: 1, name: "Daniel Lopez", phone: "232323"),
-    UserModel(id: 2, name: "Elvis Barrionuevo", phone: "6565656"),
+    UserModel(
+      id: 1,
+      name: "Daniel Lopez",
+      phone: "232323",
+      role: "Admin"
+    ),
+    UserModel(
+      id: 2,
+      name: "Elvis Barrionuevo",
+      phone: "6565656",
+      role: "User",
+    ),
   ];
 
   String fullName = "";
   String phone = "";
-
+  String role = "";
 
   @override
   Widget build(BuildContext context) {
@@ -42,19 +52,7 @@ class _PeoplePageState extends State<PeoplePage> {
         backgroundColor: Colors.indigo,
         title: Text("People Page (${people2.length})"),
         actions: [
-          IconButton(
-            onPressed: () {
-              UserModel person =
-                  UserModel(id: 3, name: "Catalina Montes", phone: "354545");
 
-              people2.add(person);
-
-              setState(() {});
-            },
-            icon: const Icon(
-              Icons.add,
-            ),
-          ),
         ],
       ),
       body: SingleChildScrollView(
@@ -73,7 +71,7 @@ class _PeoplePageState extends State<PeoplePage> {
               decoration: const InputDecoration(
                 hintText: "Nombre completo",
               ),
-              onChanged: (String value){
+              onChanged: (String value) {
                 fullName = value;
               },
             ),
@@ -84,8 +82,19 @@ class _PeoplePageState extends State<PeoplePage> {
               decoration: const InputDecoration(
                 hintText: "Teléfono",
               ),
-              onChanged: (String value){
+              onChanged: (String value) {
                 phone = value;
+              },
+            ),
+            const SizedBox(
+              height: 10.0,
+            ),
+            TextField(
+              decoration: const InputDecoration(
+                hintText: "Rol",
+              ),
+              onChanged: (String value) {
+                role = value;
               },
             ),
             const SizedBox(
@@ -100,6 +109,7 @@ class _PeoplePageState extends State<PeoplePage> {
                     id: people2.length + 1,
                     name: fullName,
                     phone: phone,
+                    role: role,
                   );
 
                   people2.add(user);
